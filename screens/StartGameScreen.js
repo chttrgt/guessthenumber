@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Alert, TextInput, View } from "react-native";
+import { StyleSheet, Alert, TextInput, View, Platform } from "react-native";
 import PrimaryButton from "../components/PrimaryButton";
 
 const StartGameScreen = ({ onPickNumber }) => {
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
   inputContainer: {
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 100,
+    marginTop: Platform.OS === "ios" ? 50 : 100,
     marginHorizontal: 24,
     padding: 16,
     backgroundColor: "#3b021f",
