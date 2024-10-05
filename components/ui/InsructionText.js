@@ -2,8 +2,8 @@ import React from "react";
 import { StyleSheet, Text } from "react-native";
 import Colors from "../../constants/colors";
 
-export default function InsructionText({ children }) {
-  return <Text style={styles.text}>{children}</Text>;
+export default function InsructionText({ children, style }) {
+  return <Text style={[styles.text, style]}>{children}</Text>;
 }
 
 const styles = StyleSheet.create({
