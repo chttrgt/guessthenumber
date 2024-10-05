@@ -57,10 +57,14 @@ const StartGameScreen = ({ onPickNumber }) => {
         />
         <View style={styles.buttonsContainer}>
           <View style={styles.buttonContainer}>
-            <PrimaryButton onPress={resetInputHandler}>Reset</PrimaryButton>
+            <PrimaryButton onPress={resetInputHandler} bradius={25}>
+              Reset
+            </PrimaryButton>
           </View>
           <View style={styles.buttonContainer}>
-            <PrimaryButton onPress={confirmInputHandler}>Confirm</PrimaryButton>
+            <PrimaryButton onPress={confirmInputHandler} bradius={25}>
+              Confirm
+            </PrimaryButton>
           </View>
         </View>
       </Card>

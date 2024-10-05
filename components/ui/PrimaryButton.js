@@ -2,9 +2,9 @@ import React from "react";
 import { StyleSheet, Text, View, Pressable } from "react-native";
 import Colors from "../../constants/colors";
 
-export default function PrimaryButton({ children, onPress }) {
+export default function PrimaryButton({ children, onPress, bradius }) {
   return (
-    <View style={styles.buttonOuterContainer}>
+    <View style={styles.buttonOuterContainer(bradius)}>
       <Pressable
         style={({ pressed }) =>
           pressed
@@ -21,15 +21,15 @@ export default function PrimaryButton({ children, onPress }) {
 }
 
 const styles = StyleSheet.create({
-  buttonOuterContainer: {
-    borderRadius: 25,
+  buttonOuterContainer: (bradius) => ({
+    borderRadius: bradius,
     margin: 4,
     overflow: "hidden",
-  },
+  }),
   buttonInnerContainer: {
     backgroundColor: Colors.primary500,
     paddingVertical: 10,
-    paddingHorizontal: 20,
+    paddingHorizontal: 15,
     elevation: 2,
     shadowColor: Colors.shadowBlack,
     shadowOffset: { width: 0, height: 2 },

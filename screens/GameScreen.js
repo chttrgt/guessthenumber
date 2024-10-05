@@ -5,6 +5,7 @@ import NumberContainer from "../components/game/NumberContainer";
 import PrimaryButton from "../components/ui/PrimaryButton";
 import Card from "../components/ui/Card";
 import InsructionText from "../components/ui/InsructionText";
+import { FontAwesome } from "@expo/vector-icons";
 
 function generateRandomBetween(min, max, exclude) {
   const rndNum = Math.floor(Math.random() * (max - min)) + min;
@@ -66,13 +67,19 @@ const GameScreen = ({ userNumber, onGameOver }) => {
         </InsructionText>
         <View style={styles.buttonsContainer}>
           <View style={styles.buttonContainer}>
-            <PrimaryButton onPress={nextGuessHandler.bind(this, "greater")}>
-              +
+            <PrimaryButton
+              onPress={nextGuessHandler.bind(this, "greater")}
+              bradius={30}
+            >
+              <FontAwesome name="plus-circle" size={40} />
             </PrimaryButton>
           </View>
           <View style={styles.buttonContainer}>
-            <PrimaryButton onPress={nextGuessHandler.bind(this, "lower")}>
-              -
+            <PrimaryButton
+              onPress={nextGuessHandler.bind(this, "lower")}
+              bradius={30}
+            >
+              <FontAwesome name="minus-circle" size={40} />
             </PrimaryButton>
           </View>
         </View>
@@ -91,9 +98,14 @@ const styles = StyleSheet.create({
   },
   buttonsContainer: {
     flexDirection: "row",
+    gap: 20,
   },
   buttonContainer: {
-    flex: 1,
+    width: 80,
+    height: 80,
+    borderRadius: 80,
+    alignItems: "center",
+    justifyContent: "center",
   },
   insructionText: {
     marginBottom: 20,
